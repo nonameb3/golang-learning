@@ -2,10 +2,17 @@ package main
 
 func main() {
 	cards := newDeck()
+	// cards.saveToFile("my_cards")
 
-	hand, remainCards := deal(cards, 5)
+	// cards := newDeckFromFile("my_cards")
 
+	cards.shuffling()
 	cards.print()
-	hand.print()
-	remainCards.print()
+	// fmt.Println(cards.toString())
+
+	// hand, remainCards := deal(cards, 5)
+
+	// cards.print()
+	// hand.print()
+	// remainCards.print()
 }
