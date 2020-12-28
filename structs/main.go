@@ -23,11 +23,20 @@ func main() {
 		},
 	}
 
+	// pointer origin
+	// pointer := &bank
+	// pointer.updateFristName("Bank'Waraphon")
+
 	bank.updateFristName("Bank'Waraphon")
 	bank.print()
 }
 
-func (p person) updateFristName(name string) {
+// func origin origin
+// func (pPointer *person) updateFristName(name string) {
+// 	(*pPointer).firstName = name
+// }
+
+func (p *person) updateFristName(name string) {
 	p.firstName = name
 }
 
