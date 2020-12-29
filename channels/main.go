@@ -20,13 +20,26 @@ func main() {
 		go checkLink(link, channels)
 	}
 
+	// life := 5
+	// for {
+	// 	select {
+	// 	case s := <-channels:
+	// 		fmt.Printf("out : %+v\n", s)
+	// 	default:
+	// 		time.Sleep(500 * time.Millisecond)
+	// 		if life--; life == 0 {
+	// 			close(channels)
+	// 			return
+	// 		}
+	// 	}
+	// }
+
 	for link := range channels {
 		go func(l string) {
 			time.Sleep(2 * time.Second)
 			checkLink(l, channels)
 		}(link)
 	}
-	// fmt.Println(<-channels)
 }
 
 func checkLink(l string, c chan string) {
